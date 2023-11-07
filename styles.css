@@ -1,9 +1,35 @@
+@font-face {
+    font-family: 'SomethingStraight';
+    src: url('fonts/SomethingStraight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SundayGrapes';
+    src: url('fonts/SundayGrapes.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Courier New';
+    font-family: 'SundayGrapes', 'Courier New';
     overflow-x: hidden; /* This will prevent horizontal scrolling */
+}
+
+body {
+   background-color: #f4f4f4;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
 }
 
 
@@ -26,6 +52,7 @@ body, html {
     height: 560px;
     width: 100%;
     overflow: hidden;
+    background-color: 'black';
 }
 
 .carousel::before {
@@ -53,6 +80,15 @@ body, html {
 }
 
 
+.party-text {
+  z-index: 200;
+  background: linear-gradient(45deg, #FC466B, #3F5EFB, #05DFD7, #F3A953, #FC466B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 h1 {
     font-size: 3rem;
     margin-bottom: 10px; /* Give a margin to separate from the h2 */
@@ -71,14 +107,7 @@ h2 {
 
 
 
-@media screen and (min-width: 768px) {
-    .container {
-        height: 692px;
-    }
-    .carousel, .carousel-image {
-        height: 692px;
-    }
-}
+
 
 .info-section {
     background-color: black;
@@ -98,6 +127,77 @@ body {
     min-height: 100vh;
 }
 
+#emailForm {
+   display: flex;
+   flex-direction: column;
+   width: 300px; /* Adjust as needed */
+ }
+
+ #emailForm label,
+ #emailForm input,
+ #emailForm button {
+   margin-bottom: 15px; /* Adjust spacing between elements */
+ }
+
+ #emailForm input {
+   border: 2px solid #6a5acd;
+   border-radius: 5px;
+   padding: 10px;
+   font-size: 16px; /* Adjust input text size */
+ }
+
+ #emailForm button {
+   padding: 10px 20px;
+   font-size: 16px;
+   background-color: #6a5acd; /* Modern purple */
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+
+ #emailForm button:hover {
+   background-color: #483d8b; /* Darker shade on hover */
+   transform: translateY(-2px); /* Slight lift effect */
+ }
+
+ #thankYouMessage {
+   display: none;
+   margin-top: 20px; /* Spacing above the thank you message */
+   font-size: 18px;
+ }
+
 .container, .info-section {
     width: 100%;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  h1 {
+      font-size: 5rem;
+      margin-bottom: 15px; /* Give a margin to separate from the h2 */
+      z-index: 2;
+  }
+
+  h2 {
+      font-size: 4rem;
+      z-index: 2;
+  }
+
+    .container {
+        height: 692px;
+    }
+    .carousel, .carousel-image {
+        height: 692px;
+    }
+
+    #emailForm {
+      flex-direction: row; /* Align children side by side */
+      justify-content: space-around; /* Distribute space arou*/
+      align-items: center; /* This will vertically center the items */
+        width: auto;
+        gap: 15px; /*
+    }
 }

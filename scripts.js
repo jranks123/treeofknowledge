@@ -21,8 +21,30 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         images[currentImageIndex].style.opacity = 1;
-        dots[currentImageIndex].classList.add('active');
     }
       //comments
     setInterval(changeImage, 6500); // Change image every 6.5 seconds to account for the longer transition
+});
+
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var email = document.getElementById('email').value;
+    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        method: 'POST',
+        body: JSON.stringify({ email: email }),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Hide the form and show the thank you message
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('errorMessage').style.display = 'block';
+    });
 });
