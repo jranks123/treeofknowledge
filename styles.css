@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'SomethingStraight';
-    src: url('fonts/SomethingStraight.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'SundayGrapes';
     src: url('fonts/SundayGrapes.ttf') format('truetype');
     font-weight: normal;
