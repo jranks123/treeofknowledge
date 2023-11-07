@@ -29,15 +29,22 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('emailForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var email = document.getElementById('email').value;
-    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwloTkeo9i3W_CO4KIH1rfOztPrZZpxld5Bae21rjTQS73ZyHCXSYlw-HwGVzuMsDhZGA/exec', {
         method: 'POST',
+        mode: 'cors', // CORS mode
         body: JSON.stringify({ email: email }),
         headers: {
             'Content-Type': 'application/json'
         },
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.text(); // assuming the response is plain text
+    })
     .then(data => {
+        // Assuming the data is plain text, not JSON
         // Hide the form and show the thank you message
         document.getElementById('formContainer').style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
