@@ -28,30 +28,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById('emailForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    document.getElementById('emailForm').style.display = 'none';
+    document.getElementById('loadingMessage').style.display = 'block';
     var email = document.getElementById('email').value;
-    fetch('https://script.google.com/macros/s/AKfycbwloTkeo9i3W_CO4KIH1rfOztPrZZpxld5Bae21rjTQS73ZyHCXSYlw-HwGVzuMsDhZGA/exec', {
-        method: 'POST',
-        mode: 'cors', // CORS mode
-        body: JSON.stringify({ email: email }),
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+
+    // JSONP requires you to add a script element to the page.
+    var script = document.createElement('script');
+
+    // Replace YOUR_SCRIPT_ID with the actual ID of your Google Apps Script
+    script.src = 'https://script.google.com/macros/s/AKfycbx6Cb2umLU2ARkJvfCU73-hXrrhpajqfXDF5epvNeCBp81W9PGFrIVhgzIBW4K1KeXVTg/exec?callback=handleResponse&email=' + encodeURIComponent(email);
+
+    // This function will handle the JSONP response
+    window.handleResponse = function(data) {
+
+        // Check the response status
+        if (data.status === 'success') {
+          document.getElementById('loadingMessage').style.display = 'none';
+            // Hide the form and show the thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
+        } else {
+            // Show the error message
+            document.getElementById('errorMessage').style.display = 'block';
         }
-        return response.text(); // assuming the response is plain text
-    })
-    .then(data => {
-        // Assuming the data is plain text, not JSON
-        // Hide the form and show the thank you message
-        document.getElementById('formContainer').style.display = 'none';
-        document.getElementById('thankYouMessage').style.display = 'block';
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('formContainer').style.display = 'none';
+
+        // Clean up by removing the script element
+        script.parentNode.removeChild(script);
+    };
+
+    // Append the script to the DOM to start the request
+    document.body.appendChild(script);
+
+    // If the script fails to load, handle the error case
+    script.onerror = function() {
+        document.getElementById('loadingMessage').style.display = 'none';
+        // Show error message
         document.getElementById('errorMessage').style.display = 'block';
-    });
+        // Clean up by removing the script element
+        script.parentNode.removeChild(script);
+    };
 });

@@ -94,7 +94,7 @@ body {
 }
 
 
-h1, h2 {
+h1, h2, h3 {
   color: #FFFFFF;
   text-shadow:
    -2px -2px 0 #000,
@@ -109,7 +109,7 @@ h1 {
     z-index: 2;
 }
 
-h2 {
+h2, h3 {
     font-size: 2rem;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -196,8 +196,8 @@ body {
       z-index: 2;
   }
 
-  h2 {
-      font-size: 4rem;
+  h2, h3 {
+      font-size: 3rem;
       z-index: 2;
   }
 
@@ -207,6 +207,20 @@ body {
     .carousel, .carousel-image {
         height: 692px;
     }
+
+    .loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
     #emailForm {
       flex-direction: row; /* Align children side by side */
