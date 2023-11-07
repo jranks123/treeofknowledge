@@ -94,6 +94,9 @@ h1, h2, h3 {
     2px -2px 0 #000,
    -2px 2px 0 #000,
     2px 2px 0 #000;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 h1 {
@@ -128,6 +131,7 @@ h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 4;
 }
 
 body {
@@ -182,6 +186,11 @@ body {
 }
 
 
+@media screen and (max-width: 600px) {
+
+
+}
+
 @media screen and (min-width: 768px) {
 
   h1 {
@@ -207,6 +216,6 @@ body {
       justify-content: space-around; /* Distribute space arou*/
       align-items: center; /* This will vertically center the items */
         width: auto;
-        gap: 15px; /*
+        gap: 15px;
     }
 }
