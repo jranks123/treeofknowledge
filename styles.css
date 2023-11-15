@@ -5,6 +5,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'ComicSansMS3';
+    src: url('fonts/ComicSansMS3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 .text-background {
@@ -28,6 +34,10 @@ body {
    align-items: center;
    height: 100vh;
    margin: 0;
+}
+
+h2 {
+  font-family: 'ComicSansMS3';
 }
 
 
