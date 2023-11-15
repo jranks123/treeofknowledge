@@ -112,10 +112,6 @@ h2, h3, h4 {
     z-index: 2;
 }
 
-h2 {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-}
-
 .carousel-image.active {
     opacity: 1;
     z-index: 1;
