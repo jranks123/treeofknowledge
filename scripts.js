@@ -24,46 +24,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
       //comments
     setInterval(changeImage, 6500); // Change image every 6.5 seconds to account for the longer transition
-});
 
-document.getElementById('emailForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    document.getElementById('emailForm').style.display = 'none';
-    document.getElementById('loadingMessage').style.display = 'block';
-    var email = document.getElementById('email').value;
 
-    // JSONP requires you to add a script element to the page.
-    var script = document.createElement('script');
 
-    // Replace YOUR_SCRIPT_ID with the actual ID of your Google Apps Script
-    script.src = 'https://script.google.com/macros/s/AKfycbx6Cb2umLU2ARkJvfCU73-hXrrhpajqfXDF5epvNeCBp81W9PGFrIVhgzIBW4K1KeXVTg/exec?callback=handleResponse&email=' + encodeURIComponent(email);
 
-    // This function will handle the JSONP response
-    window.handleResponse = function(data) {
+    // Find the button with the class 'payment-button'
+    var button = document.querySelector('.payment-button');
 
-        // Check the response status
-        if (data.status === 'success') {
-          document.getElementById('loadingMessage').style.display = 'none';
-            // Hide the form and show the thank you message
-            document.getElementById('thankYouMessage').style.display = 'block';
-        } else {
-            // Show the error message
-            document.getElementById('errorMessage').style.display = 'block';
-        }
+    // Check if the button exists
+    if (button) {
+        // Add a click event listener to the button
+        button.addEventListener('click', function() {
+            // Specify the URL you want to redirect to
+            var url = 'https://buy.stripe.com/eVacPUcOa4q5ck8dQQ';
 
-        // Clean up by removing the script element
-        script.parentNode.removeChild(script);
-    };
-
-    // Append the script to the DOM to start the request
-    document.body.appendChild(script);
-
-    // If the script fails to load, handle the error case
-    script.onerror = function() {
-        document.getElementById('loadingMessage').style.display = 'none';
-        // Show error message
-        document.getElementById('errorMessage').style.display = 'block';
-        // Clean up by removing the script element
-        script.parentNode.removeChild(script);
-    };
+            // Redirect to the specified URL
+            window.location.href = url;
+        });
+    }
 });
