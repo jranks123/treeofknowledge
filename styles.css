@@ -24,11 +24,12 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Maputo', 'Courier New';
+
     overflow-x: hidden; /* This will prevent horizontal scrolling */
 }
 
 body {
-   background-color: #f4f4f4;
+   background-color: black;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -36,7 +37,7 @@ body {
    margin: 0;
 }
 
-h2 {
+h2, h3 {
   font-family: 'ComicSansMS3';
 }
 
@@ -69,7 +70,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* adjust the 0.4 value as needed */
+    background: rgba(0, 0, 0, 0.6); /* adjust the 0.4 value as needed */
     z-index: 2; /* to ensure overlay is above the images but below the text */
 }
 
@@ -129,7 +130,9 @@ h2, h3, h4 {
 
 
 
-
+.payment-button {
+  width: 300px;
+}
 
 .info-section {
     background-color: black;
@@ -151,9 +154,10 @@ body {
 }
 
 #emailForm {
+  z-index: 55;
    display: flex;
    flex-direction: column;
-   width: 300px; /* Adjust as needed */
+  margin-top: 40px;
  }
 
  #emailForm label,
@@ -200,6 +204,15 @@ body {
 
 
 @media screen and (max-width: 600px) {
+    .container, .info-section {
+        padding: 10px; /* Add padding */
+    }
+
+    #emailForm {
+        width: 100%; /* Set form width to 100% */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center-align the items */
+    }
 
 
 }
@@ -229,7 +242,8 @@ body {
       flex-direction: row; /* Align children side by side */
       justify-content: space-around; /* Distribute space arou*/
       align-items: center; /* This will vertically center the items */
-        width: auto;
+
         gap: 15px;
+
     }
 }
