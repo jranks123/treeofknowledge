@@ -29,17 +29,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Find the button with the class 'payment-button'
-    var button = document.querySelector('.payment-button');
+    //var button = document.querySelector('.payment-button');
 
     // Check if the button exists
-    if (button) {
-        // Add a click event listener to the button
-        button.addEventListener('click', function() {
-            // Specify the URL you want to redirect to
-            var url = 'https://buy.stripe.com/eVacPUcOa4q5ck8dQQ';
-
-            // Redirect to the specified URL
-            window.location.href = url;
-        });
-    }
+    // if (button) {
+    //     // Add a click event listener to the button
+    //     button.addEventListener('click', function() {
+    //         // Specify the URL you want to redirect to
+    //         var url = 'https://buy.stripe.com/eVacPUcOa4q5ck8dQQ';
+    //
+    //         // Redirect to the specified URL
+    //         window.location.href = url;
+    //     });
+    // }
 });
