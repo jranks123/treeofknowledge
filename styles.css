@@ -13,6 +13,14 @@
 }
 
 
+@font-face {
+    font-family: 'punk';
+    src: url('fonts/ethno.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 .text-background {
     background-color: rgba(255, 255, 255, 1);
     padding: 0.2em 0.4em; /* adjust padding as needed */
@@ -23,7 +31,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Maputo', 'Courier New';
+    font-family: 'punk', 'Courier New';
 
     overflow-x: hidden; /* This will prevent horizontal scrolling */
 }
@@ -38,7 +46,7 @@ body {
 }
 
 h2, h3 {
-  font-family: 'ComicSansMS3';
+  font-family: 'punk';
 }
 
 
@@ -182,7 +190,7 @@ body {
    border-radius: 5px;
    text-decoration:none;
    font-weight: normal;
-   font-family: 'ComicSansMS3';
+   font-family: 'punk';
    cursor: pointer;
    transition: background-color 0.3s ease, transform 0.3s ease;
  }
