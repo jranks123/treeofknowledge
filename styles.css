@@ -73,6 +73,7 @@ body, html {
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Block display to enable margin auto to work */
     margin: 10px auto 20px; /* Top and bottom margins 0, left and right margins auto */
+    padding-top: 10px;
 }    
 
 .insta {
