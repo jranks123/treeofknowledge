@@ -42,7 +42,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('img/background-3.png'); 
+    background-image: url('img/background.jpg'); 
     background-size: contain; /* The image will be scaled to fit the element */
     background-position: center center; /* Center the image within the element */
     background-repeat: no-repeat; /* Prevent the background image from repeating */  
