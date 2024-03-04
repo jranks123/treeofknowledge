@@ -42,10 +42,10 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('img/background.jpg'); 
-    background-size: cover; /* The image will be scaled to fit the element */
-    background-position: center center; /* Center the image within the element */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */  
+    background-image: url('img/background.jpg'), url('img/background-2.jpg') ; 
+    background-size: contain, cover; /* The image will be scaled to fit the element */
+    background-position: center center, center center; /* Center the image within the element */
+    background-repeat: no-repeat, no-repeat; /* Prevent the background image from repeating */  
     background-color:  #8F3777; /* Main background color */
     display: flex;
     justify-content: center;
