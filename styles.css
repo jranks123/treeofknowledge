@@ -55,7 +55,7 @@ body, html {
 }
 
 .centered-block {
-    background-color: #EBE8DC; /* Block background color */
+    background-color: rgba(235, 232, 220, 1);; /* Block background color */
     padding: 20px;
     width: 50%;
     max-width: 800px; /* Maximum width of the block */
