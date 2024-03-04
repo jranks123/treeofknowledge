@@ -106,4 +106,8 @@ body, html {
     body, html {
         font-size: 15px;
     }
+
+    .donate-button {
+        width: 80%;
+    }
 }
