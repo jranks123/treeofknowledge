@@ -43,7 +43,7 @@ body, html {
     margin: 0;
     padding: 0;
     background-image: url('img/background.jpg'); 
-    background-size: contain; /* The image will be scaled to fit the element */
+    background-size: cover; /* The image will be scaled to fit the element */
     background-position: center center; /* Center the image within the element */
     background-repeat: no-repeat; /* Prevent the background image from repeating */  
     background-color:  #8F3777; /* Main background color */
