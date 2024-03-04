@@ -69,10 +69,10 @@ body, html {
 }
 
 .content-image {
-    max-width: 80%; /* Adjust the width as needed */
+    max-width: 90%; /* Adjust the width as needed */
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Block display to enable margin auto to work */
-    margin: 0 auto 20px; /* Top and bottom margins 0, left and right margins auto */
+    margin: 10px auto 20px; /* Top and bottom margins 0, left and right margins auto */
 }    
 
 .insta {
@@ -111,6 +111,10 @@ body, html {
         font-size: 15px;
         background-size: cover; /* The image will be scaled to fit the element */
 
+    }
+
+    .centered-block {
+        width: 80%;
     }
 
     .donate-button {
