@@ -69,7 +69,7 @@ body, html {
 }
 
 .content-image {
-    max-width: 90%; /* Adjust the width as needed */
+    max-width: 80%; /* Adjust the width as needed */
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Block display to enable margin auto to work */
     margin: 10px auto 20px; /* Top and bottom margins 0, left and right margins auto */
@@ -111,6 +111,10 @@ body, html {
         font-size: 15px;
         background-size: cover; /* The image will be scaled to fit the element */
 
+    }
+
+    .content-image {
+        max-width: 60%;
     }
 
     .centered-block {
