@@ -71,6 +71,10 @@ body, html {
     margin: 0 auto 20px; /* Top and bottom margins 0, left and right margins auto */
 }    
 
+.insta {
+
+}
+
 
 .donate-button {
     width: 60%;
@@ -85,7 +89,7 @@ body, html {
 }
 
 .title {
-    font-family: 'Gotham Ultra';
+    font-family: 'Gotham Bold';
     margin-bottom: 15px;
 
 }
